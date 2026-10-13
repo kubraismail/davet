@@ -1,682 +1,743 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#f5f0e8" />
-  <meta name="description" content="Kübra Esra & İsmail düğün davetiyesi — 15 Ekim 2026, Armonia Davet Çamlıca & Panorama." />
-  <meta property="og:title" content="Kübra Esra & İsmail | Düğün Davetiyesi" />
-  <meta property="og:description" content="15 Ekim 2026 Perşembe · Armonia Davet Çamlıca & Panorama" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="davetiye.png" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f7f3ec" />
+  <meta name="description" content="Kübra Esra & İsmail düğün davetiyesi - 15 Ekim 2026" />
   <title>Kübra Esra & İsmail | Düğün Davetiyesi</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Italiana&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --paper: #f6f1e9;
-      --paper-2: #fbf8f2;
-      --ink: #171717;
-      --muted: #77716a;
-      --line: rgba(23,23,23,.18);
-      --accent: #9b8062;
-      --shadow: 0 24px 70px rgba(30,24,18,.12);
+    :root{
+      --bg:#f7f3ec;
+      --paper:#fbf8f2;
+      --ink:#171512;
+      --muted:#766f66;
+      --line:#d8d0c4;
+      --gold:#a78962;
+      --shadow:0 20px 65px rgba(48,40,30,.10);
+      --serif:"Cormorant Garamond", Georgia, serif;
+      --sans:"Montserrat", Arial, sans-serif;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--ink);
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:var(--sans);
+      overflow-x:hidden;
+    }
+    img{max-width:100%;display:block}
+    button,a{font:inherit}
+    a{color:inherit;text-decoration:none}
+
+    .hero{
+      position:relative;
+      min-height:100svh;
+      display:grid;
+      place-items:center;
+      padding:clamp(14px,2.6vw,34px);
+      overflow:hidden;
+      isolation:isolate;
       background:
-        radial-gradient(circle at 12% 8%, rgba(255,255,255,.95) 0 8%, transparent 28%),
-        radial-gradient(circle at 88% 18%, rgba(255,255,255,.9) 0 10%, transparent 30%),
-        linear-gradient(180deg, #ece6dc 0%, var(--paper) 28%, #efe9df 100%);
-      font-family: "Montserrat", sans-serif;
-      overflow-x: hidden;
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,.96), transparent 34%),
+        radial-gradient(circle at 85% 8%, rgba(255,255,255,.74), transparent 32%),
+        linear-gradient(135deg,#f8f5ef 0%,#f2eee7 100%);
+    }
+    .hero::before,
+    .hero::after{
+      content:"";
+      position:absolute;
+      width:min(42vw,620px);
+      aspect-ratio:1;
+      border:1px solid rgba(167,137,98,.22);
+      border-radius:50%;
+      z-index:-1;
+      pointer-events:none;
+    }
+    .hero::before{right:-18vw;top:-22vw}
+    .hero::after{left:-26vw;bottom:-30vw}
+
+    .hero-card{
+      width:min(100%, 920px);
+      min-height:min(88svh, 860px);
+      background:rgba(251,248,242,.95);
+      box-shadow:var(--shadow);
+      border:1px solid rgba(167,137,98,.18);
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:clamp(34px,6vh,72px) clamp(22px,7vw,92px);
+      overflow:hidden;
+    }
+    .hero-card::before,
+    .hero-card::after{
+      content:"";
+      position:absolute;
+      width:72px;
+      height:72px;
+      pointer-events:none;
+    }
+    .hero-card::before{
+      top:22px;left:22px;
+      border-top:1px solid rgba(23,21,18,.45);
+      border-left:1px solid rgba(23,21,18,.45);
+    }
+    .hero-card::after{
+      bottom:22px;right:22px;
+      border-bottom:1px solid rgba(23,21,18,.28);
+      border-right:1px solid rgba(23,21,18,.28);
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: .17;
-      z-index: 100;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E");
-      mix-blend-mode: multiply;
+    .eyebrow{
+      margin:0 0 clamp(20px,3vh,34px);
+      font-size:clamp(.68rem,.8vw,.85rem);
+      letter-spacing:.42em;
+      text-transform:uppercase;
+      color:#8f887f;
+      font-weight:500;
+    }
+    .monogram{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:clamp(18px,2.7vh,34px);
+      color:#3c3732;
+      font-family:var(--serif);
+      font-size:clamp(1rem,1.3vw,1.25rem);
+      letter-spacing:.15em;
+    }
+    .monogram .heart{
+      color:var(--gold);
+      font-size:.95em;
+      letter-spacing:0;
+    }
+    .names{
+      margin:0;
+      font-family:var(--serif);
+      font-weight:500;
+      line-height:.86;
+      letter-spacing:-.035em;
+      font-size:clamp(4.1rem,8.6vw,8.5rem);
+      text-wrap:balance;
+    }
+    .names .amp{
+      display:block;
+      color:var(--gold);
+      font-style:italic;
+      font-size:.62em;
+      line-height:.9;
+      margin:.06em 0;
+    }
+    .quote{
+      max-width:680px;
+      margin:clamp(28px,4vh,46px) auto 0;
+      font-family:var(--serif);
+      font-size:clamp(1.18rem,2vw,1.65rem);
+      line-height:1.45;
+      color:#5d5750;
+      text-wrap:balance;
+    }
+    .hero-date{
+      width:min(100%,510px);
+      margin-top:clamp(28px,4vh,48px);
+      padding:15px 8px;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      font-size:clamp(.72rem,1vw,.93rem);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:10px;
+      margin-top:clamp(22px,3vh,34px);
+    }
+    .btn{
+      appearance:none;
+      border:1px solid var(--ink);
+      background:var(--ink);
+      color:white;
+      padding:13px 22px;
+      min-height:46px;
+      border-radius:999px;
+      cursor:pointer;
+      letter-spacing:.04em;
+      transition:.22s ease;
+    }
+    .btn:hover{transform:translateY(-1px);opacity:.92}
+    .btn.secondary{
+      background:transparent;
+      color:var(--ink);
+      border-color:#c9c0b3;
+    }
+    .scroll-cue{
+      margin-top:20px;
+      color:#827a70;
+      font-size:.76rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
     }
 
-    a { color: inherit; text-decoration: none; }
-    button, input, select, textarea { font: inherit; }
-    button { cursor: pointer; }
-
-    .hero {
-      min-height: 100svh;
-      display: grid;
-      place-items: center;
-      padding: 28px 20px;
-      position: relative;
-      overflow: hidden;
+    main{
+      width:min(100%,1120px);
+      margin:auto;
+      padding:clamp(54px,8vw,105px) 18px;
+    }
+    .section{
+      padding:clamp(54px,7vw,90px) 0;
+      border-bottom:1px solid #e3ddd4;
+    }
+    .section:last-child{border-bottom:0}
+    .section-kicker{
+      margin:0 0 9px;
+      font-size:.7rem;
+      letter-spacing:.28em;
+      text-transform:uppercase;
+      color:var(--gold);
+    }
+    .section h2{
+      margin:0;
+      font-family:var(--serif);
+      font-weight:500;
+      font-size:clamp(2.2rem,5vw,4rem);
+      line-height:1;
+    }
+    .lead{
+      margin:20px 0 0;
+      max-width:760px;
+      color:#6c655d;
+      line-height:1.8;
+      font-size:clamp(.95rem,1.5vw,1.05rem);
     }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 62vw;
-      height: 62vw;
-      max-width: 760px;
-      max-height: 760px;
-      border: 1px solid rgba(155,128,98,.2);
-      border-radius: 50%;
-      top: -32vw;
-      right: -18vw;
+    .families{
+      margin-top:38px;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+    }
+    .family-card,.info-card{
+      padding:28px;
+      border:1px solid #ddd5ca;
+      background:#fbf8f2;
+    }
+    .family-card strong{
+      display:block;
+      font-family:var(--serif);
+      font-size:1.65rem;
+      font-weight:500;
+      margin-bottom:6px;
     }
 
-    .intro-card {
-      width: min(760px, 100%);
-      min-height: min(84svh, 760px);
-      background: rgba(251,248,242,.92);
-      backdrop-filter: blur(8px);
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255,255,255,.86);
-      padding: clamp(42px, 8vw, 88px) clamp(26px, 8vw, 82px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
+    .countdown{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+      margin-top:34px;
+    }
+    .countbox{
+      text-align:center;
+      border:1px solid #ddd5ca;
+      background:#fbf8f2;
+      padding:25px 8px;
+    }
+    .countbox b{
+      display:block;
+      font-family:var(--serif);
+      font-size:clamp(2rem,5vw,3.8rem);
+      font-weight:500;
+    }
+    .countbox span{
+      font-size:.67rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:#7b746c;
     }
 
-    .intro-card::before,
-    .intro-card::after {
-      content: "";
-      position: absolute;
-      width: 56px;
-      height: 56px;
-      border-color: var(--accent);
-      opacity: .45;
+    .venue-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:18px;
+      margin-top:34px;
     }
-    .intro-card::before { top: 18px; left: 18px; border-top: 1px solid; border-left: 1px solid; }
-    .intro-card::after { bottom: 18px; right: 18px; border-bottom: 1px solid; border-right: 1px solid; }
-
-    .eyebrow {
-      letter-spacing: .34em;
-      text-transform: uppercase;
-      font-size: .68rem;
-      color: var(--muted);
-      margin-bottom: 28px;
+    .venue-name{
+      font-family:var(--serif);
+      font-size:clamp(2rem,4vw,3.25rem);
+      margin:0 0 12px;
+      font-weight:500;
     }
-
-    .monogram {
-      font-family: "Italiana", serif;
-      font-size: .9rem;
-      letter-spacing: .18em;
-      margin-bottom: 34px;
+    .venue-address{line-height:1.8;color:#686159}
+    .action-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}
+    .outline{
+      border:1px solid #cfc5b8;
+      border-radius:999px;
+      padding:12px 17px;
+      background:#fff;
+      cursor:pointer;
     }
 
-    h1 {
-      font-family: "Cormorant Garamond", serif;
-      font-weight: 500;
-      font-size: clamp(3.3rem, 12vw, 7.4rem);
-      line-height: .78;
-      margin: 0;
-      letter-spacing: -.045em;
+    .timeline{
+      margin-top:34px;
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:14px;
+    }
+    .timeline article{
+      border:1px solid #d8d0c6;
+      background:rgba(255,255,255,.36);
+      min-height:250px;
+      padding:36px 32px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .timeline time{
+      display:block;
+      color:var(--ink);
+      font-family:var(--serif);
+      font-size:clamp(2.2rem,3.3vw,3.2rem);
+      line-height:1;
+      margin-bottom:34px;
+    }
+    .timeline h3{
+      margin:0 0 10px;
+      font-family:var(--serif);
+      font-size:clamp(1.7rem,2.2vw,2.15rem);
+      font-weight:500;
+    }
+    .timeline p{
+      margin:0;
+      color:#8a837b;
+      line-height:1.55;
+      font-size:.88rem;
     }
 
-    h1 .amp {
-      display: block;
-      color: var(--accent);
-      font-style: italic;
-      font-size: .62em;
-      margin: .24em 0 .14em;
+    .invitation-wrap{
+      max-width:760px;
+      margin:34px auto 0;
+      border:1px solid #ddd5ca;
+      padding:clamp(8px,1.5vw,14px);
+      background:white;
+      box-shadow:0 18px 50px rgba(38,31,24,.08);
+    }
+    .invitation-wrap img{width:100%;height:auto}
+
+    .rsvp{
+      display:grid;
+      gap:14px;
+      max-width:720px;
+      margin-top:34px;
+    }
+    .field{display:grid;gap:7px}
+    .field label{font-size:.78rem;letter-spacing:.06em;color:#625b53}
+    .field input,.field select,.field textarea{
+      width:100%;
+      border:1px solid #d7cfc4;
+      background:#fff;
+      border-radius:0;
+      padding:14px;
+      font:inherit;
+      color:var(--ink);
+      outline:none;
+    }
+    .field textarea{min-height:110px;resize:vertical}
+    .field input:focus,.field select:focus,.field textarea:focus{border-color:#9d8668}
+
+    footer{
+      text-align:center;
+      padding:42px 18px 70px;
+      color:#756d64;
+    }
+    footer strong{
+      display:block;
+      font-family:var(--serif);
+      font-size:2rem;
+      font-weight:500;
+      color:var(--ink);
+      margin-bottom:8px;
     }
 
-    .hero-copy {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(1.1rem, 3vw, 1.4rem);
-      line-height: 1.55;
-      max-width: 510px;
-      margin: 38px auto 30px;
-      color: #3f3b36;
+    .music-fab{
+      position:fixed;
+      z-index:50;
+      right:max(14px, env(safe-area-inset-right));
+      bottom:max(14px, env(safe-area-inset-bottom));
+      border:0;
+      border-radius:999px;
+      padding:12px 16px;
+      background:#272421;
+      color:#fff;
+      box-shadow:0 8px 25px rgba(0,0,0,.18);
+      cursor:pointer;
+      font-size:.8rem;
+    }
+    #yt-player{
+      position:fixed;
+      width:1px;height:1px;
+      opacity:.001;
+      pointer-events:none;
+      left:-9999px;top:-9999px;
     }
 
-    .date-pill {
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      padding: 13px 26px;
-      letter-spacing: .12em;
-      font-size: .78rem;
-      text-transform: uppercase;
-      margin-bottom: 32px;
+    @media (max-width: 980px){
+      .timeline{grid-template-columns:repeat(2,minmax(0,1fr))}
     }
 
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
-    .btn {
-      min-height: 48px;
-      padding: 0 22px;
-      border: 1px solid var(--ink);
-      background: var(--ink);
-      color: white;
-      border-radius: 999px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      transition: .25s ease;
-      font-size: .83rem;
-      letter-spacing: .05em;
-    }
-    .btn:hover { transform: translateY(-2px); }
-    .btn.ghost { background: transparent; color: var(--ink); }
-
-    .scroll-note {
-      position: absolute;
-      bottom: 18px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: .68rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--muted);
+    @media (max-width: 850px){
+      .hero{padding:12px}
+      .hero-card{
+        min-height:calc(100svh - 24px);
+        width:100%;
+        padding:40px 26px;
+      }
+      .venue-grid{grid-template-columns:1fr}
     }
 
-    main { position: relative; z-index: 2; }
-    section { padding: clamp(76px, 10vw, 130px) 20px; }
-    .wrap { width: min(980px, 100%); margin: 0 auto; }
-
-    .section-head { text-align: center; margin-bottom: 54px; }
-    .section-head .kicker {
-      font-size: .68rem;
-      letter-spacing: .32em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 14px;
-    }
-    .section-head h2 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(2.5rem, 7vw, 4.7rem);
-      font-weight: 500;
-      letter-spacing: -.025em;
-      margin: 0;
-    }
-    .section-head p {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.25rem;
-      max-width: 620px;
-      margin: 20px auto 0;
-      color: #5e5953;
-      line-height: 1.55;
-    }
-
-    .families {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      gap: 32px;
-      width: min(760px, 100%);
-      margin: 0 auto;
-    }
-    .family { text-align: center; }
-    .family strong {
-      display: block;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 2rem;
-      font-weight: 500;
-      margin-bottom: 8px;
-    }
-    .family span { letter-spacing: .18em; font-size: .72rem; text-transform: uppercase; color: var(--muted); }
-    .heart-line { width: 1px; height: 90px; background: var(--line); position: relative; }
-    .heart-line::after {
-      content: "♡";
-      position: absolute;
-      top: 50%; left: 50%; transform: translate(-50%, -50%);
-      background: var(--paper);
-      padding: 10px 0;
-      font-size: 1.45rem;
+    @media (max-width: 560px){
+      .hero{min-height:100svh;padding:0;background:var(--paper)}
+      .hero-card{
+        min-height:100svh;
+        width:100%;
+        border:0;
+        box-shadow:none;
+        padding:max(34px, env(safe-area-inset-top)) 20px max(28px, env(safe-area-inset-bottom));
+        justify-content:center;
+      }
+      .hero-card::before{width:42px;height:42px;top:18px;left:18px}
+      .hero-card::after{display:none}
+      .eyebrow{font-size:.62rem;letter-spacing:.34em;margin-bottom:18px}
+      .monogram{margin-bottom:17px;font-size:.93rem}
+      .names{font-size:clamp(3.45rem,17.5vw,5.25rem);line-height:.85}
+      .quote{margin-top:23px;font-size:1.13rem;line-height:1.38;max-width:330px}
+      .hero-date{margin-top:25px;width:100%;font-size:.68rem;line-height:1.5;padding:11px 2px}
+      .hero-actions{width:100%;margin-top:20px;gap:8px}
+      .hero-actions .btn{flex:1 1 145px;padding:12px 14px;font-size:.82rem}
+      .scroll-cue{font-size:.62rem;margin-top:15px}
+      main{padding:36px 17px}
+      .section{padding:50px 0}
+      .families{grid-template-columns:1fr}
+      .countdown{grid-template-columns:repeat(2,1fr)}
+      .family-card,.info-card{padding:22px}
+      .action-row .outline{width:100%;text-align:center}
+      .timeline{grid-template-columns:1fr}
+      .timeline article{min-height:0;padding:24px 22px}
+      .timeline time{font-size:2.45rem;margin-bottom:18px}
+      .timeline h3{font-size:1.8rem}
+      .music-fab{padding:11px 13px;font-size:.72rem}
     }
 
-    .countdown-section { background: #171717; color: white; }
-    .countdown-section .section-head p, .countdown-section .kicker { color: #c9c2ba; }
-    .countdown {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      width: min(780px, 100%);
-      margin: 0 auto;
-    }
-    .count-box {
-      border: 1px solid rgba(255,255,255,.18);
-      padding: 28px 12px;
-      text-align: center;
-    }
-    .count-box b {
-      display: block;
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(2.6rem, 7vw, 4.8rem);
-      font-weight: 400;
-      line-height: 1;
-    }
-    .count-box span { display: block; margin-top: 10px; font-size: .68rem; text-transform: uppercase; letter-spacing: .2em; color: #bdb6ae; }
-
-    .venue-card {
-      background: var(--paper-2);
-      border: 1px solid rgba(23,23,23,.08);
-      box-shadow: var(--shadow);
-      padding: clamp(30px, 6vw, 64px);
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 44px;
-      align-items: center;
-    }
-    .venue-card h3 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(2.2rem, 6vw, 4rem);
-      line-height: 1;
-      font-weight: 500;
-      margin: 0 0 16px;
-    }
-    .venue-card p { line-height: 1.7; color: #514d47; margin: 0 0 24px; }
-    .venue-meta {
-      display: grid;
-      gap: 12px;
-      padding: 28px;
-      border: 1px solid var(--line);
-    }
-    .meta-label { font-size: .66rem; text-transform: uppercase; letter-spacing: .2em; color: var(--muted); display: block; margin-bottom: 4px; }
-    .meta-value { font-family: "Cormorant Garamond", serif; font-size: 1.35rem; }
-
-    .program {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-    .program-item {
-      background: rgba(255,255,255,.38);
-      border: 1px solid var(--line);
-      padding: 34px 26px;
-      min-height: 210px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .program-item .time { font-family: "Cormorant Garamond", serif; font-size: 3rem; line-height: 1; }
-    .program-item h3 { margin: 0; font-family: "Cormorant Garamond", serif; font-size: 1.8rem; font-weight: 500; }
-    .program-item p { margin: 8px 0 0; color: var(--muted); font-size: .84rem; line-height: 1.5; }
-
-    .invite-frame {
-      width: min(720px, 100%);
-      margin: 0 auto;
-      background: white;
-      padding: clamp(8px, 2vw, 16px);
-      box-shadow: var(--shadow);
-    }
-    .invite-frame img { width: 100%; height: auto; display: block; }
-
-    .rsvp {
-      background: #171717;
-      color: white;
-    }
-    .rsvp .section-head p { color: #c5beb6; }
-    .form {
-      width: min(720px, 100%);
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    .field { display: grid; gap: 8px; }
-    .field.full { grid-column: 1 / -1; }
-    label { font-size: .7rem; text-transform: uppercase; letter-spacing: .16em; color: #bdb5ad; }
-    input, select, textarea {
-      width: 100%;
-      background: transparent;
-      color: white;
-      border: 1px solid rgba(255,255,255,.22);
-      border-radius: 0;
-      padding: 14px 15px;
-      outline: none;
-    }
-    select option { color: #111; }
-    textarea { resize: vertical; min-height: 100px; }
-    .form .btn { grid-column: 1/-1; background: white; color: #171717; border-color: white; margin-top: 4px; }
-    .form-note { grid-column: 1/-1; text-align: center; color: #9f9891; font-size: .76rem; line-height: 1.6; }
-
-    footer {
-      text-align: center;
-      padding: 58px 20px 78px;
-      background: #171717;
-      color: white;
-      border-top: 1px solid rgba(255,255,255,.08);
-    }
-    footer .names { font-family: "Cormorant Garamond", serif; font-size: 2.7rem; }
-    footer .date { font-size: .7rem; text-transform: uppercase; letter-spacing: .24em; color: #aaa39b; margin-top: 10px; }
-
-    .music-fab {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 99;
-      border: 1px solid rgba(255,255,255,.5);
-      color: white;
-      background: rgba(23,23,23,.86);
-      backdrop-filter: blur(10px);
-      border-radius: 999px;
-      padding: 12px 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.16);
-      font-size: .74rem;
-      letter-spacing: .04em;
-    }
-
-    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s ease, transform .8s ease; }
-    .reveal.on { opacity: 1; transform: none; }
-
-    @media (max-width: 760px) {
-      .hero { padding: 14px; }
-      .intro-card { min-height: calc(100svh - 28px); }
-      .families { grid-template-columns: 1fr; gap: 18px; }
-      .heart-line { height: 48px; margin: 0 auto; }
-      .countdown { grid-template-columns: repeat(2, 1fr); }
-      .venue-card { grid-template-columns: 1fr; }
-      .program { grid-template-columns: 1fr; }
-      .program-item { min-height: 160px; }
-      .form { grid-template-columns: 1fr; }
-      .field.full, .form .btn, .form-note { grid-column: 1; }
-      .music-fab { right: 12px; bottom: 12px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      * { scroll-behavior: auto !important; transition: none !important; }
-      .reveal { opacity: 1; transform: none; }
+    @media (max-width: 390px), (max-height: 700px) and (max-width: 560px){
+      .hero-card{padding-top:24px;padding-bottom:20px}
+      .eyebrow{margin-bottom:12px}
+      .monogram{margin-bottom:10px}
+      .names{font-size:clamp(3rem,15vw,4rem)}
+      .quote{margin-top:17px;font-size:1rem}
+      .hero-date{margin-top:17px}
+      .hero-actions{margin-top:14px}
+      .scroll-cue{display:none}
     }
   </style>
 </head>
 <body>
 
-  <div id="player" aria-hidden="true" style="position:fixed;width:1px;height:1px;opacity:.001;pointer-events:none;left:-10px;top:-10px"></div>
+  <section class="hero" id="top">
+    <div class="hero-card">
+      <p class="eyebrow">Düğün Davetiyesi</p>
+      <div class="monogram"><span>K</span><span class="heart">♡</span><span>İ</span></div>
 
-  <header class="hero" id="davet">
-    <div class="intro-card reveal on">
-      <div class="eyebrow">Düğün Davetiyesi</div>
-      <div class="monogram">K ♡ İ</div>
-      <h1>Kübra Esra <span class="amp">&</span> İsmail</h1>
-      <p class="hero-copy">Bir ömür “Evet” derken, en güzel anımızı sevdiklerimizle paylaşmak istiyoruz.</p>
-      <div class="date-pill">15 Ekim 2026 · Perşembe · 19:00</div>
+      <h1 class="names">
+        Kübra Esra
+        <span class="amp">&amp;</span>
+        İsmail
+      </h1>
+
+      <p class="quote">Bir ömür “Evet” derken, en güzel anımızı sevdiklerimizle paylaşmak istiyoruz.</p>
+
+      <div class="hero-date">15 Ekim 2026 · Perşembe · 19:00</div>
+
       <div class="hero-actions">
         <button class="btn" id="openInvite">Daveti Aç ♫</button>
-        <a class="btn ghost" href="#detaylar">Aşağı Kaydır ↓</a>
+        <a class="btn secondary" href="#davetimiz">Aşağı Kaydır ↓</a>
       </div>
+
+      <div class="scroll-cue">Kübra Esra &amp; İsmail</div>
     </div>
-    <div class="scroll-note">Kübra Esra & İsmail</div>
-  </header>
+  </section>
 
   <main>
-    <section id="detaylar">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div class="kicker">Davetimiz</div>
-          <h2>Bu özel günümüzde yanımızda olun</h2>
-          <p>Hayatımızın en güzel günlerinden birinde, mutluluğumuza ortak olmanızdan büyük sevinç duyacağız.</p>
-        </div>
+    <section class="section" id="davetimiz">
+      <p class="section-kicker">Davetimiz</p>
+      <h2>Bu özel günümüzde yanımızda olun</h2>
+      <p class="lead">Hayatımızın en güzel günlerinden birinde, mutluluğumuza ortak olmanızdan büyük sevinç duyacağız.</p>
 
-        <div class="families reveal">
-          <div class="family">
-            <strong>Hatice & Murtaza</strong>
-            <span>Yaşmeşe Ailesi</span>
-          </div>
-          <div class="heart-line"></div>
-          <div class="family">
-            <strong>Emine & Osman</strong>
-            <span>Coşgun Ailesi</span>
-          </div>
+      <div class="families">
+        <div class="family-card">
+          <strong>Hatice &amp; Murtaza</strong>
+          Yaşmeşe Ailesi
+        </div>
+        <div class="family-card">
+          <strong>Emine &amp; Osman</strong>
+          Coşgun Ailesi
         </div>
       </div>
     </section>
 
-    <section class="countdown-section">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div class="kicker">Geri Sayım</div>
-          <h2>Kavuşmamıza kalan süre</h2>
-          <p>15 Ekim 2026 · 19:00 · İstanbul</p>
+    <section class="section">
+      <p class="section-kicker">Geri Sayım</p>
+      <h2>Kavuşmamıza kalan süre</h2>
+      <p class="lead">15 Ekim 2026 · 19:00 · İstanbul</p>
+      <div class="countdown">
+        <div class="countbox"><b id="days">--</b><span>Gün</span></div>
+        <div class="countbox"><b id="hours">--</b><span>Saat</span></div>
+        <div class="countbox"><b id="minutes">--</b><span>Dakika</span></div>
+        <div class="countbox"><b id="seconds">--</b><span>Saniye</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="section-kicker">15 Ekim 2026</p>
+      <h2>Düğün</h2>
+
+      <div class="venue-grid">
+        <div class="info-card">
+          <h3 class="venue-name">Armonia Davet<br>Çamlıca &amp; Panorama</h3>
+          <div class="venue-address">
+            Kısıklı, Çamlıca Tepesi Yolu No:2/1<br>
+            34692 Üsküdar / İstanbul
+          </div>
+          <div class="action-row">
+            <a class="outline" href="https://share.google/do8JToXiRFtRIsabk" target="_blank" rel="noopener">Yol Tarifi</a>
+            <button class="outline" id="calendarBtn">Takvime Ekle</button>
+          </div>
         </div>
-        <div class="countdown reveal" aria-label="Düğüne kalan süre">
-          <div class="count-box"><b id="days">--</b><span>Gün</span></div>
-          <div class="count-box"><b id="hours">--</b><span>Saat</span></div>
-          <div class="count-box"><b id="minutes">--</b><span>Dakika</span></div>
-          <div class="count-box"><b id="seconds">--</b><span>Saniye</span></div>
+
+        <div class="info-card">
+          <p><strong>Tarih</strong><br>15 Ekim 2026 · Perşembe</p>
+          <p><strong>Düğün Başlangıcı</strong><br>19:00</p>
+          <p><strong>Nikâh</strong><br>19:30</p>
+          <p><strong>Bitiş</strong><br>23:00</p>
+          <p><strong>Konum</strong><br>Üsküdar / İstanbul</p>
         </div>
       </div>
     </section>
 
-    <section id="tarihler">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div class="kicker">15 Ekim 2026</div>
-          <h2>Düğün</h2>
-        </div>
+    <section class="section">
+      <p class="section-kicker">Düğün Programı</p>
+      <h2>Günün akışı</h2>
 
-        <article class="venue-card reveal">
-          <div>
-            <h3>Armonia Davet<br>Çamlıca & Panorama</h3>
-            <p>Kısıklı, Çamlıca Tepesi Yolu No:2/1<br>34692 Üsküdar / İstanbul</p>
-            <div class="hero-actions" style="justify-content:flex-start">
-              <a class="btn" href="https://share.google/do8JToXiRFtRIsabk" target="_blank" rel="noopener noreferrer">Yol Tarifi</a>
-              <button class="btn ghost" id="addCalendar">Takvime Ekle</button>
-            </div>
-          </div>
-          <div class="venue-meta">
-            <div>
-              <span class="meta-label">Tarih</span>
-              <span class="meta-value">15 Ekim 2026 · Perşembe</span>
-            </div>
-            <div>
-              <span class="meta-label">Saat</span>
-              <span class="meta-value">19:00 – 23:00</span>
-            </div>
-            <div>
-              <span class="meta-label">Konum</span>
-              <span class="meta-value">Üsküdar / İstanbul</span>
-            </div>
-          </div>
+      <div class="timeline">
+        <article>
+          <time>18:00</time>
+          <h3>Gelin Alma</h3>
+          <p>Düğün öncesi geleneksel buluşma</p>
+        </article>
+
+        <article>
+          <time>19:00</time>
+          <h3>Düğün</h3>
+          <p>Armonia Davet Çamlıca &amp; Panorama</p>
+        </article>
+
+        <article>
+          <time>19:30</time>
+          <h3>Nikâh</h3>
+          <p>Nikâh töreni</p>
+        </article>
+
+        <article>
+          <time>22:00</time>
+          <h3>Kına</h3>
+          <p>Gecenin son bölümünde birlikte</p>
         </article>
       </div>
     </section>
 
-    <section id="program">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div class="kicker">Düğün Programı</div>
-          <h2>Günün akışı</h2>
-        </div>
-        <div class="program">
-          <article class="program-item reveal">
-            <div class="time">18:00</div>
-            <div><h3>Gelin Alma</h3><p>Düğün öncesi geleneksel buluşma</p></div>
-          </article>
-          <article class="program-item reveal">
-            <div class="time">19:00</div>
-            <div><h3>Düğün</h3><p>Armonia Davet Çamlıca & Panorama</p></div>
-          </article>
-          <article class="program-item reveal">
-            <div class="time">22:00</div>
-            <div><h3>Kına</h3><p>Gecenin son bölümünde birlikte</p></div>
-          </article>
-        </div>
+    <section class="section">
+      <p class="section-kicker">Hatıra</p>
+      <h2>Davetiyemiz</h2>
+      <div class="invitation-wrap">
+        <img src="davetiye.png" alt="Kübra Esra ve İsmail düğün davetiyesi">
       </div>
     </section>
 
-    <section id="davetiye">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div class="kicker">Hatıra</div>
-          <h2>Davetiyemiz</h2>
+    <section class="section">
+      <p class="section-kicker">Katılım</p>
+      <h2>Bize haber verin</h2>
+      <p class="lead">Katılım bilginizi doldurun; mesajınız WhatsApp üzerinden hazır olarak açılsın.</p>
+
+      <form class="rsvp" id="rsvpForm">
+        <div class="field">
+          <label for="name">Ad Soyad</label>
+          <input id="name" required placeholder="Adınız ve soyadınız">
         </div>
-        <div class="invite-frame reveal">
-          <img src="davetiye.png" alt="Kübra Esra ve İsmail düğün davetiyesi" loading="lazy">
+        <div class="field">
+          <label for="status">Katılım Durumu</label>
+          <select id="status" required>
+            <option value="">Seçiniz</option>
+            <option>Katılacağım</option>
+            <option>Katılamayacağım</option>
+          </select>
         </div>
-      </div>
-    </section>
-
-    <section class="rsvp" id="katilim">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div class="kicker">Katılım</div>
-          <h2>Bize haber verin</h2>
-          <p>Katılım bilginizi doldurun; mesajınız WhatsApp üzerinden hazır olarak açılsın.</p>
+        <div class="field">
+          <label for="people">Kişi Sayısı</label>
+          <input id="people" type="number" min="1" max="20" value="1">
         </div>
-
-        <form class="form reveal" id="rsvpForm">
-          <div class="field full">
-            <label for="name">Ad Soyad</label>
-            <input id="name" name="name" autocomplete="name" placeholder="Adınız ve soyadınız" required>
-          </div>
-
-          <div class="field">
-            <label for="status">Katılım Durumu</label>
-            <select id="status" name="status" required>
-              <option value="Katılıyorum">Katılıyorum</option>
-              <option value="Katılamıyorum">Katılamıyorum</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="guests">Kişi Sayısı</label>
-            <input id="guests" name="guests" type="number" min="1" max="20" value="1" required>
-          </div>
-
-          <div class="field full">
-            <label for="note">Not</label>
-            <textarea id="note" name="note" placeholder="İsterseniz kısa bir not bırakabilirsiniz."></textarea>
-          </div>
-
-          <button class="btn" type="submit">WhatsApp ile Gönder</button>
-          <div class="form-note">Butona dokunduğunuzda katılım bilgileriniz +90 538 863 51 78 numarasına gönderilmeye hazır şekilde WhatsApp’ta açılır.</div>
-        </form>
-      </div>
+        <div class="field">
+          <label for="note">Not</label>
+          <textarea id="note" placeholder="Varsa notunuz"></textarea>
+        </div>
+        <button class="btn" type="submit">WhatsApp ile Gönder</button>
+      </form>
     </section>
   </main>
 
   <footer>
-    <div class="names">Kübra Esra & İsmail</div>
-    <div class="date">15 · 10 · 2026</div>
+    <strong>Kübra Esra &amp; İsmail</strong>
+    15 · 10 · 2026
   </footer>
 
-  <button class="music-fab" id="musicToggle" aria-label="Müziği aç veya kapat">♫ Müziği Aç</button>
+  <button class="music-fab" id="musicFab">♫ Müziği Aç</button>
+  <div id="yt-player" aria-hidden="true"></div>
 
-  <script src="https://www.youtube.com/iframe_api"></script>
   <script>
-    const WEDDING_TIME = new Date('2026-10-15T19:00:00+03:00').getTime();
-    const WHATSAPP_NUMBER = '905388635178';
-    const YOUTUBE_VIDEO_ID = 'vDOW8y_yEwQ';
+    const weddingDate = new Date("2026-10-15T19:00:00+03:00");
 
-    // Reveal animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('on');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal:not(.on)').forEach(el => observer.observe(el));
-
-    // Countdown
-    function updateCountdown() {
-      const now = Date.now();
-      let diff = Math.max(0, WEDDING_TIME - now);
-      const d = Math.floor(diff / 86400000); diff %= 86400000;
-      const h = Math.floor(diff / 3600000); diff %= 3600000;
-      const m = Math.floor(diff / 60000); diff %= 60000;
-      const s = Math.floor(diff / 1000);
-      document.getElementById('days').textContent = d;
-      document.getElementById('hours').textContent = String(h).padStart(2, '0');
-      document.getElementById('minutes').textContent = String(m).padStart(2, '0');
-      document.getElementById('seconds').textContent = String(s).padStart(2, '0');
+    function updateCountdown(){
+      const diff = weddingDate - new Date();
+      if(diff <= 0){
+        ["days","hours","minutes","seconds"].forEach(id => document.getElementById(id).textContent = "00");
+        return;
+      }
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor(diff % 86400000 / 3600000);
+      const m = Math.floor(diff % 3600000 / 60000);
+      const s = Math.floor(diff % 60000 / 1000);
+      document.getElementById("days").textContent = String(d).padStart(2,"0");
+      document.getElementById("hours").textContent = String(h).padStart(2,"0");
+      document.getElementById("minutes").textContent = String(m).padStart(2,"0");
+      document.getElementById("seconds").textContent = String(s).padStart(2,"0");
     }
     updateCountdown();
-    setInterval(updateCountdown, 1000);
+    setInterval(updateCountdown,1000);
 
-    // YouTube music. Browsers require user interaction before sound can start.
-    let ytPlayer;
+    let player = null;
     let musicOn = false;
-    window.onYouTubeIframeAPIReady = function() {
-      ytPlayer = new YT.Player('player', {
-        height: '1', width: '1', videoId: YOUTUBE_VIDEO_ID,
-        playerVars: { autoplay: 0, controls: 0, loop: 1, playlist: YOUTUBE_VIDEO_ID, rel: 0 },
-        events: {
-          onReady: (event) => event.target.setVolume(60),
-          onStateChange: (event) => {
-            if (event.data === YT.PlayerState.ENDED) event.target.playVideo();
+    let apiLoading = false;
+
+    function loadYoutube(){
+      if(window.YT && window.YT.Player){
+        createPlayer();
+        return;
+      }
+      if(apiLoading) return;
+      apiLoading = true;
+      const tag = document.createElement("script");
+      tag.src = "https://www.youtube.com/iframe_api";
+      document.head.appendChild(tag);
+    }
+
+    window.onYouTubeIframeAPIReady = createPlayer;
+
+    function createPlayer(){
+      if(player) return;
+      player = new YT.Player("yt-player", {
+        height:"1",
+        width:"1",
+        videoId:"vDOW8y_yEwQ",
+        playerVars:{
+          autoplay:0,
+          controls:0,
+          loop:1,
+          playlist:"vDOW8y_yEwQ",
+          playsinline:1
+        },
+        events:{
+          onReady: () => {
+            player.playVideo();
+            musicOn = true;
+            updateMusicButtons();
           }
         }
       });
-    };
-
-    const musicToggle = document.getElementById('musicToggle');
-    function toggleMusic(forceOn = null) {
-      if (!ytPlayer || typeof ytPlayer.playVideo !== 'function') return;
-      const next = forceOn === null ? !musicOn : forceOn;
-      if (next) {
-        ytPlayer.playVideo();
-        musicOn = true;
-        musicToggle.textContent = '❚❚ Müziği Kapat';
-      } else {
-        ytPlayer.pauseVideo();
-        musicOn = false;
-        musicToggle.textContent = '♫ Müziği Aç';
-      }
     }
-    musicToggle.addEventListener('click', () => toggleMusic());
-    document.getElementById('openInvite').addEventListener('click', () => {
-      toggleMusic(true);
-      document.getElementById('detaylar').scrollIntoView({ behavior: 'smooth' });
+
+    function toggleMusic(){
+      if(!player){
+        loadYoutube();
+        return;
+      }
+      if(musicOn){
+        player.pauseVideo();
+        musicOn = false;
+      }else{
+        player.playVideo();
+        musicOn = true;
+      }
+      updateMusicButtons();
+    }
+
+    function updateMusicButtons(){
+      document.getElementById("musicFab").textContent = musicOn ? "♫ Müziği Kapat" : "♫ Müziği Aç";
+    }
+
+    document.getElementById("musicFab").addEventListener("click", toggleMusic);
+
+    document.getElementById("openInvite").addEventListener("click", () => {
+      toggleMusic();
+      setTimeout(() => document.getElementById("davetimiz").scrollIntoView({behavior:"smooth"}), 250);
     });
 
-    // RSVP WhatsApp
-    document.getElementById('rsvpForm').addEventListener('submit', (e) => {
+    document.getElementById("rsvpForm").addEventListener("submit", e => {
       e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const status = document.getElementById('status').value;
-      const guests = document.getElementById('guests').value;
-      const note = document.getElementById('note').value.trim();
-      const message = [
-        'Merhaba, Kübra Esra & İsmail düğünü için katılım bilgimi iletiyorum:',
-        '',
-        `Ad Soyad: ${name}`,
-        `Katılım: ${status}`,
-        `Kişi Sayısı: ${guests}`,
-        note ? `Not: ${note}` : ''
-      ].filter(Boolean).join('\n');
-      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+      const name = document.getElementById("name").value.trim();
+      const status = document.getElementById("status").value;
+      const people = document.getElementById("people").value;
+      const note = document.getElementById("note").value.trim();
+
+      const message =
+`Merhaba, Kübra Esra & İsmail'in düğün daveti için katılım bilgimi iletiyorum.
+
+Ad Soyad: ${name}
+Katılım: ${status}
+Kişi Sayısı: ${people}
+${note ? "Not: " + note : ""}`;
+
+      window.open("https://wa.me/905388635178?text=" + encodeURIComponent(message), "_blank");
     });
 
-    // Calendar (.ics)
-    document.getElementById('addCalendar').addEventListener('click', () => {
-      const ics = [
-        'BEGIN:VCALENDAR',
-        'VERSION:2.0',
-        'PRODID:-//Kubra Esra ve Ismail//Dugun Daveti//TR',
-        'BEGIN:VEVENT',
-        'UID:kubra-ismail-15102026@example.com',
-        'DTSTAMP:20260925T200000Z',
-        'DTSTART:20261015T160000Z',
-        'DTEND:20261015T200000Z',
-        'SUMMARY:Kübra Esra & İsmail Düğünü',
-        'LOCATION:Armonia Davet Çamlıca & Panorama, Kısıklı, Çamlıca Tepesi Yolu No:2/1, 34692 Üsküdar/İstanbul',
-        'DESCRIPTION:Kübra Esra & İsmail düğün daveti. 18:00 Gelin Alma, 19:00 Düğün, 22:00 Kına.',
-        'END:VEVENT',
-        'END:VCALENDAR'
-      ].join('\r\n');
-      const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+    document.getElementById("calendarBtn").addEventListener("click", () => {
+      const ics =
+`BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Kubra Esra Ismail//Dugun//TR
+BEGIN:VEVENT
+UID:kubra-ismail-15102026
+DTSTAMP:20261013T103000Z
+DTSTART:20261015T160000Z
+DTEND:20261015T200000Z
+SUMMARY:Kübra Esra & İsmail - Düğün
+LOCATION:Armonia Davet Çamlıca & Panorama, Kısıklı, Çamlıca Tepesi Yolu No:2/1, Üsküdar, İstanbul
+DESCRIPTION:Düğün başlangıcı 19:00. Nikâh 19:30. Kına 22:00.
+END:VEVENT
+END:VCALENDAR`;
+
+      const blob = new Blob([ics], {type:"text/calendar;charset=utf-8"});
       const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
+      const a = document.createElement("a");
       a.href = url;
-      a.download = 'kubra-esra-ismail-dugun.ics';
+      a.download = "kubra-esra-ismail-dugun.ics";
       document.body.appendChild(a);
       a.click();
       a.remove();
